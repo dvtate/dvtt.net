@@ -32,8 +32,7 @@
                 -webkit-animation:a 5s infinite ease-in-out;
                 animation: a 5s infinite ease-in-out;
             }
-            .pad10 { padding: 10px; }
-            .pad20 { padding: 20px; }
+            
             
             #about_blurb {
                 background-color: RGBA(211, 211, 211, 0.4);
@@ -63,14 +62,17 @@
             div.card-group-title {
                 text-align: center;
             }
-            div#skills-green {
-                background-color: green;
+            div#skills-green > button {
+                border: 1px solid green;
+                background-color: #aaffaa;
             }
-            div#skills-yellow {
-                background-color: yellow;
+            div#skills-yellow > button {
+                border: 1px solid yellow;
+                background-color: #ffffaa;
             }
-            div#skills-red {
-                background-color: red;
+            div#skills-red > button {
+                border: 1px solid red;
+                background-color: #ffaaaa;
             }
             img#lhp-self-portrait {
                 background-color: blue;
@@ -88,9 +90,9 @@
         <div class="row" >
             <div class="col-sm-12" id="topbar">
                 <a href="#">Home</a> |
-                <a href="#">Blog</a> |
-                <a href="#">Socials</a> |
-                <a href="#">Portfolio</a>
+                <a href="https://blog.dvtate.com">Blog</a> |
+                <a href="https://me.dvtate.com">Socials</a> |
+                <!--<a href="#">Portfolio</a>-->
             </div>
         </div>
 
@@ -137,7 +139,8 @@
                         </div>
                         <div class="section">
                             <p>Starting starting in 2016 as an overgrown calculator program, YodaScript has been my goto place to play around with language feature concepts.</p>
-                            <button>Version 1</button><button>Version 2</button>
+                            <button onclick="window.location='https://github.com/dvtate/old-yoda'">Version 1</button>
+                            <button onclick="window.location='https://github.com/dvtate/YodaScript'">Version 2</button>
                         </div>
                     </div>
                     <div class="card">
@@ -149,6 +152,23 @@
                             <button onclick="window.location='https://corki.js.org'">Website</button>
                         </div>
                     </div>
+                    <div class="card">
+                        <div class="section">
+                            <h3>StrattyX</h3>
+                        </div>
+                        <div class="section">
+                            <p>The CEO came to me with a name, a logo and a dream to democratize algorithmic trading. I lead a team of developers to make all the company's software.</p>
+                            <button onclick="window.location='https://strattyx.com'">Website</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="section">
+                            <h3>IIT RMC</h3>
+                        </div>
+                        <div class="section">
+                            <p>As programming lead for IIT's NASA Robotic Mining Competitive Team, I've lead a team of students to utilize control systems, LIDAR, etc. in the code for our automated mining robot.</p>
+                            <button onclick="window.location='https://github.com/spacehawks/robot2020'">2020 Robot Code</button>
+                        </div>
                 </div>
             </div>
             <br/>
@@ -157,11 +177,12 @@
                 <div class="row card-group-title">
                     <div class="col-sm-12">
                         <h2>Skills</h2>
+                        <p>In addition to my formal education, I've worked on projects which utilize a wide variety of skills.</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <p>I've worked on projects which utilize a wide variety of skills in addition to formal education. I've also chosen to list my weaknesses and skills I dislike using.</p>
+                        
                         <ul>
                             <li>Green: I've used for several years in multiple projects and am confident in abilities</li>
                             <li>Yellow: I've used in past but don't have a massive depth of experience. Confident I can relearn if needed</li>
@@ -183,7 +204,7 @@
                         <button type="button" class="skills-tag jiggle">Video Editing</button>
                         <button type="button" class="skills-tag jiggle">3D modelling</button>
                         <button type="button" class="skills-tag jiggle">Aquaculture</button>
-                        
+                        <button type="button" class="skills-tag jiggle">Danish: 2009-now</button>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-4" id="skills-yellow">
                         <button type="button" class="skills-tag jiggle">WebGL</button>
@@ -194,6 +215,7 @@
                         <button type="button" class="skills-tag jiggle">React.js</button>
                         <button type="button" class="skills-tag jiggle">Spanish: 2016-2018</button>
                         <button type="button" class="skills-tag jiggle">Blacksmithing and Foundry</button>
+                        <button type="button" class="skills-tag jiggle">LoL: 2016-2019 (g3)</button>
 
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-2" id="skills-red">
