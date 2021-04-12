@@ -11,13 +11,13 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" />
         <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v2.3.7/dist/mini-default.min.css" />
-        
+
         <style type="text/css">
             body {
                 font-family: 'Open Sans', Helvetica, sans-serif;
                 padding: 0; margin: 0;
             }
-            
+
             /* headings */
             h1, h2, h3, h4, h5, h6 {
                 font-family: 'Open Sans Light', 'Open Sans', sans-serif;
@@ -39,7 +39,7 @@
                 text-align: right;
                 padding: 10px;
             }
-            
+
             div.page-slice {
                 border-radius: 6px;
                 border: 1px solid grey;
@@ -49,15 +49,15 @@
             div.card-group-title {
                 text-align: center;
             }
-            div#skills-green > button {
+            div#skills-green > * {
                 border: 1px solid green;
                 background-color: #aaffaa;
             }
-            div#skills-yellow > button {
+            div#skills-yellow > * {
                 border: 1px solid yellow;
                 background-color: #ffffaa;
             }
-            div#skills-red > button {
+            div#skills-red > * {
                 border: 1px solid red;
                 background-color: #ffaaaa;
             }
@@ -65,7 +65,7 @@
                 background-color: blue;
                 width: 20%;
             }
-            
+
             div.skills-tag {
             	cursor: default;
             }
@@ -75,7 +75,7 @@
         <!-- nav -->
         <div class="row" >
             <div class="col-sm-12" id="topbar">
-                <a href="#">Home</a> |
+                <a href="">Home</a> |
                 <a href="https://blog.dvtate.com">Blog</a> |
                 <a href="https://me.dvtate.com">Socials</a> |
             </div>
@@ -99,14 +99,14 @@
                             <li><b>Hobbies:</b> Code, Games, Electronics, Aquaculture, CAD/3D modelling, Options Trading, etc.</li>
                         </ul>
                     </div>
-                    
+
                     <div class="row">
                       <a class="button" href="https://github.com/dvtate"><i class="fab fa-github" title="GitHub logo"></i> Code</a>
                         <a class="button" href="https://linkedin.com/in/dvtate"><i class="fab fa-linkedin" title="LinkedIn logo"></i> Business</a>
                         <a class="button" href="https://twitter.com/hoffridder"><i class="fab fa-twitter" title="Twitter logo"></i> Social</a>
                         <a class="button" href="https://t.me/dvtate"><i class="fab fa-telegram" title="Telegram logo"></i> Mixed</a>
                         <a class="button" href="https://me.dvtate.com"><i class="fa fa-globe" title="Globe icon"></i> More</a>
-                        <a class="button" href="http://ag7x7kxesn2hws3zingnjkawzsiorzdyl7l4746wvmejntlwih6a.b32.i2p/">I2P</a>
+                        <a class="button" href="resume.pdf"><i class="fa fa-address-card" title="Business card icon"></i> Resume</a>
                     </div>
                 </div>
             </div>
@@ -127,7 +127,6 @@
                             <p>Starting starting in 2016 with an overgrown calculator program, I've created more than 7 different programming languages and DSL's, these are some of my favorite projects</p>
                             <a class="button" href="https://github.com/dvtate/SCL">SCL</a>
                             <a class="button" href="https://github.com/dvtate/postfix-haskell">Postfix Haskell</a>
-
                         </div>
                     </div>
                     <div class="card">
@@ -135,7 +134,7 @@
                             <h3>Corki Bot</h3>
                         </div>
                         <div class="section">
-                            <p>My 4th and most popular chat bot with a wide variety of features including a web portal, a languge based rule engine for automation, League of Legends Integrations, etc.</p>
+                            <p>My chat bot with thousands of users and a wide variety of features including a web portal, a languge based rule engine for automation, League of Legends Integrations, etc.</p>
                             <a class="button" href="https://corki.js.org">Website</a>
                         </div>
                     </div>
@@ -161,62 +160,53 @@
                     </div>
                 </div>
             </div>
-            
-            <!--skills: 3 rows green,yello, red -->
+            <!--skills: 3 groups: green,yello, red -->
             <div class="container page-slice">
                 <div class="row card-group-title">
                     <div class="col-sm-12">
                         <h2>Skills</h2>
-                        <p>In addition to my formal education, I've worked on projects which utilize a wide variety of skills.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <ul>
-                            <li>Green: I've used for several years in multiple projects and am confident in abilities</li>
-                            <li>Yellow: I've used in past but don't have a massive depth of experience. Confident I can relearn if needed</li>
-                            <li>Red: I actively avoid using these, even if I have experience.</li>
-                        </ul>
+                        <p>To summarize <a href="resume.pdf">my resume</a>, I've listed some of my key skills here, color-coded based on my level of experience and willingness to use. Please note that I am not interested in work related to the skills in red, regardless of any prior experience. </p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-6" id="skills-green">
-                        <button type="button" class="skills-tag">C++: using since 2011</button>
-                        <button type="button" class="skills-tag">JavaScript: since 2014</button>
-                        <button type="button" class="skills-tag">Python: since 2013</button>
-                        <button type="button" class="skills-tag">Linux: primary OS since 2015</button>
-                        <button type="button" class="skills-tag">Node.js: since 2016</button>
-                        <button type="button" class="skills-tag">C: using since 2015</button>
-                        <button type="button" class="skills-tag">HTML: since 2010</button>
-                        <button type="button" class="skills-tag">CSS: since 2012</button>
-                        <button type="button" class="skills-tag">REST API's: since 2017</button>
-                        <button type="button" class="skills-tag">WebGL: since 2019</button>
-                        <button type="button" class="skills-tag">SQL: since 2017</button>
-                        <button type="button" class="skills-tag">Sketchup: 2010-2017</button>
-                        <button type="button" class="skills-tag">Arduino: since 2013</button>
+                        <a href="https://github.com/dvtate?tab=repositories&amp;language=c%2B%2B"
+                            class="button skills-tag">C/C++: using since 2011</a>
+                        <a href="https://github.com/dvtate?tab=repositories&amp;language=javascript"
+                            class="button skills-tag">JavaScript: since 2014</a>
+                        <a href="https://github.com/dvtate?tab=repositories&amp;language=python"
+                            class="button skills-tag">Python: since 2014</a>
+                        <div class="button skills-tag">Linux: main OS since 2015</div>
+                        <a href="https://github.com/dvtate?tab=repositories&amp;language=html"
+                            class="button skills-tag">HTML,CSS: since 2010</a>
+                        <a href="https://github.com/MakerBounty/documentation/blob/master/db.md"
+                            class="button skills-tag">SQL: since 2017</a>
+                        <a href="https://github.com/dvtate?tab=repositories&amp;q=language"
+                            class="button skills-tag">Language Design: since 2016</a>
+                        <a href="https://github.com/dvtate?tab=repositories&amp;q=nodejs"
+                            class="button skills-tag">Node.js: since 2016</a>
+                        <a href="https://westatix.com/" class="button skills-tag">WebGL: since 2019</a>
+                        <a href="https://github.com/dvtate?tab=repositories&amp;q=arduino"
+                            class="button skills-tag">Arduino: since 2012</a>
                     </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4" id="skills-yellow">
-                        <button type="button" class="skills-tag">Spanish: since 2016</button>
-                        <button type="button" class="skills-tag">Danish: since 2009</button>
-                        <button type="button" class="skills-tag">D3.js</button>
-                        <button type="button" class="skills-tag">Haskell</button>
-                        <button type="button" class="skills-tag">MIPS Assembly</button>
-                        <button type="button" class="skills-tag">QT</button>
-                        <button type="button" class="skills-tag">React.js</button>
-                        <button type="button" class="skills-tag">Blacksmithing and Foundry</button>
-                        <button type="button" class="skills-tag">POVRay: 2014-2017</button>
-                        <button type="button" class="skills-tag">Wings3D: 2013-2018</button>
-                        <button type="button" class="skills-tag">TypeScript: since 2019</button>
-                        <button type="button" class="skills-tag">LoL: since 2016 (g3)</button>
-                        <button type="button" class="skills-tag">Video Editing</button>
-                        <button type="button" class="skills-tag">Wings3D: 2013-2016</button>
-                        <button type="button" class="skills-tag">Aquaculture</button>
+                    <div class="col-sm-12 col-md-6 col-lg-3" id="skills-yellow">
+                        <a href="https://github.com/dvtate/3D"
+                            class="button skills-tag">3D modelling: Since 2009</a>
+                        <a href="https://github.com/dvtate?tab=repositories&amp;language=haskell"
+                            class="button skills-tag">Haskell: Since 2020</a>
+                        <a href="https://na.op.gg/multi/query=ridderhoff%2Cggun"
+                            class="button skills-tag">LoL: since 2016</a>
+                        <a href="https://www.youtube.com/channel/UCH4Dm7H_eahTM4OEwuxTstQ"
+                            class="button skills-tag">Video Editing</a>
+                        <div class="button skills-tag">Spanish: since 2016</div>
                     </div>
-                    <div class="col-sm-12 col-md-6 col-lg-2" id="skills-red">
-                        <button type="button" class="skills-tag">Java: 2015-2018</button>
-                        <button type="button" class="skills-tag">PHP: 2013-2017</button>
-                        <button type="button" class="skills-tag">Go</button>
-                        <button type="button" class="skills-tag">Microsoft Windows</button>
+                    <div class="col-sm-12 col-md-6 col-lg-3" id="skills-red">
+                        <a href="https://kill-9.xyz/harmful/software/java" class="button skills-tag">Java: 2015-2018</a>
+                        <a href="https://www.jesuisundev.com/en/why-developers-hate-php/"
+                            class="button skills-tag">PHP: 2013-2017</a>
+                        <a href="http://www.golang.sucks/" class="button skills-tag">Go</a>
+                        <a href="https://itvision.altervista.org/why-windows-10-sucks.html"
+                            class="button skills-tag">Microsoft Windows</a>
                     </div>
                 </div>
             </div>
