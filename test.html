@@ -1,14 +1,13 @@
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
 <script>var OneSignal = OneSignal || [];
-OneSignal.push(function () {
-	OneSignal.init({
-		appId: "97c4642d-3816-43b7-89f6-d1de62e1f412",
-		// Your other init settings
-		notifyButton: {
-				enable: true,
-		},
-	});
-});
+const oneSignalAppId = "97c4642d-3816-43b7-89f6-d1de62e1f412";
+OneSignal.push(['init',{
+	appId: oneSignalAppId,
+	// Your other init settings
+	notifyButton: {
+			enable: true,
+	},
+}]);
 </script>
 		
 
@@ -16,8 +15,6 @@ OneSignal.push(function () {
 <button onclick="addOnesignalTags()">test</button>
 
 <script>
-
-
 	function findGetParameter(parameterName) {
 		let result = null,
 		tmp = [];
@@ -55,7 +52,7 @@ OneSignal.push(function () {
 	
 	async function addOnesignalTags() {
 		console.log('test')
-		const appId = "97c4642d-3816-43b7-89f6-d1de62e1f412";
+		const appId = oneSignalAppId;
 		const apiKey = "ODlmZjI3NmMtNGRlNS00NDVjLTg3OTEtN2ZmZmVlMDI2ZDVh";
 	
 		// Get userId
