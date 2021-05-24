@@ -102,7 +102,7 @@ OneSignal.push(['init',{
 			console.log(id);		
 			setCookie("onesignal_userid", userId, 1);
 			addOnesignalTags();
-		).catch(console.error);
+		}).catch(console.error);
 	});
 	OneSignal.push(function() {
 		OneSignal.on('notificationDisplay', function(event) {
