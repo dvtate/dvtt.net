@@ -1,5 +1,6 @@
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
-<script>var OneSignal = OneSignal || [];
+<script>
+const OneSignal = OneSignal || [];
 const oneSignalAppId = "97c4642d-3816-43b7-89f6-d1de62e1f412";
 OneSignal.push(['init',{
 	appId: oneSignalAppId,
@@ -9,12 +10,9 @@ OneSignal.push(['init',{
 	},
 }]);
 </script>
-		
-
-
-<button onclick="addOnesignalTags()">test</button>
 
 <script>
+
 	function findGetParameter(parameterName) {
 		let result = null,
 		tmp = [];
@@ -50,25 +48,30 @@ OneSignal.push(['init',{
 		return "";
 	}
 	
+	(function getUserIdParam() {
+		const value = findGetParameter("onesignal_push_id");
+		if (value)
+			setCookie("onesignal_userid", value, 30);
+	})();
+</script>
+
+
+<button onclick="addOnesignalTags()">test</button>
+
+<script>
+	// Attempt to add tags to subscription
 	async function addOnesignalTags() {
-		console.log('test')
+		// Constants
 		const appId = oneSignalAppId;
 		const apiKey = "ODlmZjI3NmMtNGRlNS00NDVjLTg3OTEtN2ZmZmVlMDI2ZDVh";
 	
 		// Get userId
-		let userId = findGetParameter("onesignal_push_id");
-		if (userId) {
-			setCookie("onesignal_userid", userId, 60);
-		} else {
-			userId = getCookie("onesignal_userid");
-		}
-		
-		// userId not available!
+		const userId = getCookie("onesignal_userid");
 		if (!userId) {
 			throw new Error("missing userid");
 		}
 		
-		// use the rest api to set relevant tags
+		// Use the rest api to set relevant tags
 		const response = await fetch(`https://onesignal.com/api/v1/apps/${appId}/users/${userId}`, {
 			body: JSON.stringify({
 				tags: {
@@ -89,12 +92,20 @@ OneSignal.push(['init',{
 		console.log(await response.json());
 	}
  	 	
-	OneSignal.push(function () {
-		OneSignal.getUserId(async function (userId) {
-			console.log("userid", userId);
-			await OneSignal.setExternalUserId(userId);
-			setCookie("onesignal_userid", userId, 1);
-			addOnesignalTags();
+	// Test with known user id
+	OneSignal.push(async function () {
+		await OneSignal.registerForPushNotifications();
+		OneSignal.isPushNotificationsEnabled(function (notifsEnabled) {
+			OneSignal.getUserId(async function (userId) {
+				console.log("userid", userId);
+				
+				// Generate an external user id that's identical to the local userid
+				await OneSignal.setExternalUserId(userId);
+				
+				// Set the cookie and call our function
+				setCookie("onesignal_userid", userId, 1);
+				addOnesignalTags();
+			});
 		});
 	});
 	
