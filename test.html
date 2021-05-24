@@ -1,6 +1,5 @@
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
-<script>
-var OneSignal = OneSignal || [];
+<script>var OneSignal = OneSignal || [];
 const oneSignalAppId = "97c4642d-3816-43b7-89f6-d1de62e1f412";
 OneSignal.push(['init',{
 	appId: oneSignalAppId,
@@ -48,10 +47,15 @@ OneSignal.push(['init',{
 		return "";
 	}
 	
+	// Get user id from the GET parameter and store it into a cookie as external id
 	(function getUserIdParam() {
-		const value = findGetParameter("onesignal_push_id");
-		if (value)
-			setCookie("onesignal_userid", value, 30);
+		const userId = findGetParameter("onesignal_push_id");
+		// Generate an external user id that's identical to the local userid
+		OneSignal.push(function () {
+				OneSignal.setExternalUserId(userId);
+		});
+		if (userId)
+			setCookie("onesignal_userid", userId, 30);
 	})();
 </script>
 
@@ -93,6 +97,7 @@ OneSignal.push(['init',{
 	}
  	 	
 	// Test with known user id
+	/*
 	OneSignal.push(async function () {
 		await OneSignal.registerForPushNotifications();
 		OneSignal.isPushNotificationsEnabled(function (notifsEnabled) {
@@ -107,6 +112,6 @@ OneSignal.push(['init',{
 				addOnesignalTags();
 			});
 		});
-	});
+	});*/
 	
 </script>
