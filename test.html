@@ -7,9 +7,12 @@ OneSignal.push(function () {
 		notifyButton: {
 				enable: true,
 		},
+		subdomain: 
 	});
 });
 </script>
+		
+
 
 <button onclick="addOnesignalTags()">test</button>
 
@@ -94,7 +97,7 @@ OneSignal.push(function () {
 		OneSignal.getUserId(function (userId) {
 			console.log("userid", userId);
 			setCookie("onesignal_userid", userId, 1);
-			addOnes	ignalTags();
+			addOnesignalTags();
 		});
 	});
 	OneSignal.push(function() {
