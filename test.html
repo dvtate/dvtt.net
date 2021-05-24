@@ -49,11 +49,13 @@ OneSignal.push(['init',{
 	
 	// Get user id from the GET parameter and store it into a cookie as external id
 	(async function getUserIdParam() {
-		const userId = findGetParameter("onesignal_push_id");
-		// Generate an external user id that's identical to the local userid
-		await OneSignal.setExternalUserId(userId);
-		if (userId)
-			setCookie("onesignal_userid", userId, 30);
+		OneSignal.push(function() {
+			const userId = findGetParameter("onesignal_push_id");
+			// Generate an external user id that's identical to the local userid
+			//await OneSignal.setExternalUserId(userId);
+			if (userId)
+				setCookie("onesignal_userid", userId, 30);
+		});
 	})();
 </script>
 
@@ -74,7 +76,7 @@ OneSignal.push(['init',{
 		}
 		
 		// Use the rest api to set relevant tags
-		const response = await fetch(`https://onesignal.com/api/v1/apps/${appId}/users/${userId}`, {
+		const response = await fetch(`https://onesignal.com/api/v1/players/${userId}`, {
 			body: JSON.stringify({
 				tags: {
 					"tag1" : "value1",
