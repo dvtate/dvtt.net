@@ -92,23 +92,10 @@ OneSignal.push(['init',{
 	OneSignal.push(function () {
 		OneSignal.getUserId(function (userId) {
 			console.log("userid", userId);
+			OneSignal.setExternalUserId(userId);
 			setCookie("onesignal_userid", userId, 1);
 			addOnesignalTags();
 		});
 	});
 	
-	OneSignal.push(function() {
-		OneSignal.getExternalUserId().then(id => {
-			console.log(id);		
-			setCookie("onesignal_userid", userId, 1);
-			addOnesignalTags();
-		}).catch(console.error);
-	});
-	OneSignal.push(function() {
-		OneSignal.on('notificationDisplay', function(event) {
-			console.warn('OneSignal notification displayed:', event);
-		});
-
-	//This event can be listened to via the `on()` or `once()` listener
-	});
 </script>
