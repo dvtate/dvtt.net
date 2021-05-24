@@ -48,7 +48,7 @@ OneSignal.push(['init',{
 	}
 	
 	// Get user id from the GET parameter and store it into a cookie as external id
-	(function getUserIdParam() {
+	(async function getUserIdParam() {
 		const userId = findGetParameter("onesignal_push_id");
 		// Generate an external user id that's identical to the local userid
 		await OneSignal.setExternalUserId(userId);
