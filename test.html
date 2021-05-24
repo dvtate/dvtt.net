@@ -90,9 +90,9 @@ OneSignal.push(['init',{
 	}
  	 	
 	OneSignal.push(function () {
-		OneSignal.getUserId(function (userId) {
+		OneSignal.getUserId(async function (userId) {
 			console.log("userid", userId);
-			OneSignal.setExternalUserId(userId);
+			await OneSignal.setExternalUserId(userId);
 			setCookie("onesignal_userid", userId, 1);
 			addOnesignalTags();
 		});
